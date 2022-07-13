@@ -23,26 +23,24 @@ window.onload =  () => {
 
 /* --------------------------------Кнопка показать все */
 for (let e = 0; e < btn.length; e++) {
-btn[e].addEventListener('click', function () {
-  for (let i = 0; i < card.length; i++) {
-    card[i].classList.toggle("hide-element");
-    if (card[i].classList.contains("hide-element")) {
-      btn.value = SHOW_ALL;
-    } else {
-      btn.value = HIDE;
+  btn[e].addEventListener('click', function () {
+    for (let i = 0; i < card.length; i++) {
+      card[i].classList.toggle("hide-element");
+      if (card[i].classList.contains("hide-element")) {
+        btn[e].value = SHOW_ALL;
+      } else {
+        btn[e].value = HIDE;
+      }
     }
-
     for (let q = 0; q < rotate.length; q++) {
-      if (btn.value === HIDE) {
+      if (btn[e].value === HIDE) {
         rotate[q].style.transform = 'rotate(' + 180 + 'deg)';
         console.log(btn.value);
       } else {
         rotate[q].style.transform = null;
       }
     }
-  }
-});
-
+  });
 }
 
 
